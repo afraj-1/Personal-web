@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Poems — Afra Juwairiya</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .poems-hero {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 5rem 2.5rem 3rem;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      margin-bottom: 3rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--accent-light); }
+    .back-link svg { width: 14px; height: 14px; }
+
+    .poems-eyebrow {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-light);
+      margin-bottom: 1rem;
+    }
+    .poems-heading {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 400;
+      color: var(--white);
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .poems-heading em { font-style: italic; color: var(--accent-light); }
+    .poems-intro {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.8;
+      max-width: 480px;
+    }
+
+    .page-divider {
+      border: none;
+      border-top: 0.5px solid rgba(255,255,255,0.08);
+      margin: 0;
+    }
+
+    /* ---- POEM LIST ---- */
+    .poems-list {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 2.5rem 6rem;
+    }
+
+    .poem {
+      padding: 3.5rem 0;
+      border-bottom: 0.5px solid rgba(255,255,255,0.06);
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .poem.visible { opacity: 1; transform: none; }
+    .poem:last-child { border-bottom: none; }
+
+    .poem-number {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.2);
+      margin-bottom: 1rem;
+    }
+
+    .poem-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      margin-bottom: 2rem;
+      line-height: 1.2;
+    }
+
+    .poem-body {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 2;
+      white-space: pre-wrap;
+      font-weight: 300;
+    }
+
+    /* stanza breaks */
+    .poem-body .stanza {
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+    .poem-body .stanza:last-child { margin-bottom: 0; }
+
+    /* lines that should feel quieter */
+    .poem-body em {
+      color: rgba(255,255,255,0.35);
+      font-style: normal;
+    }
+
+    /* Urdu poem */
+    .poem--urdu .poem-body {
+      direction: rtl;
+      font-size: 1.05rem;
+      line-height: 2.2;
+      color: rgba(255,255,255,0.6);
+    }
+    .poem--urdu .poem-title {
+      direction: rtl;
+    }
+
+    /* the note poem */
+    .poem--note .poem-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.3);
+      font-style: italic;
+      font-weight: 300;
+      letter-spacing: 0;
+      margin-bottom: 1.25rem;
+    }
+    .poem--note .poem-body {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* the birthday one */
+    .poem--personal .poem-title {
+      color: var(--accent-light);
+    }
+
+    @media (max-width: 640px) {
+      .poems-hero { padding: 3rem 1.5rem 2rem; }
+      .poems-list { padding: 0 1.5rem 4rem; }
+      .poem { padding: 2.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <div class="nav-logo">Af<span>ra</span></div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#projects">Work</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact" class="nav-cta">Let's talk →</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="poems-hero">
+    <a href="index.html" class="back-link">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 2L4 7l5 5"/></svg>
+      Back home
+    </a>
+    <div class="poems-eyebrow">Written at 2am, mostly</div>
+    <h1 class="poems-heading">Things I wrote<br><em>and kept.</em></h1>
+    <p class="poems-intro">These lived in my notes app for a while. They're not polished. They're not supposed to be. Putting them here anyway.</p>
+  </div>
+
+  <hr class="page-divider">
+
+  <div class="poems-list">
+
+    <!-- 1 -->
+    <div class="poem">
+      <div class="poem-number">01</div>
+      <div class="poem-title">Buried Love</div>
+      <div class="poem-body"><span class="stanza">He asked for my heart.
+Did I just not give him my heart
+but also buried it under him.
+He allowed me to,
+though he knew I can't do the otherwise.
+Whose fault is it more, mine or him?</span><span class="stanza">I bent my boundaries
+into shapes that pleased him,
+hoping he'd see the art
+in my surrender.
+But instead,
+he rejected the shapes
+assuming those were the real ones.</span><span class="stanza">Love may not
+always sound loud
+when killing.
+But I'd hoped
+he would hear me.
+Now I know—
+He never listened.</span></div>
+    </div>
+
+    <!-- 2 -->
+    <div class="poem">
+      <div class="poem-number">02</div>
+      <div class="poem-title">The Pain of Fear</div>
+      <div class="poem-body"><span class="stanza">Every part of my body
+devours the pain
+your thoughts bring
+and I,
+rest it in me,
+smilingly.</span><span class="stanza">'Cause somehow,
+the pain
+feels better
+than not feeling anything.</span><span class="stanza">Maybe the fear—
+of feeling nothing for you,
+haunts me more.
+
+Or the fear of feeling empty
+is buried behind all my fears.
+
+I never know
+so shall you.</span></div>
+    </div>
+
+    <!-- 3 -->
+    <div class="poem">
+      <div class="poem-number">03</div>
+      <div class="poem-title">What about, Why?</div>
+      <div class="poem-body"><span class="stanza">What about the coldness
+that doesn't go away
+even with miles of sheets over you?</span><span class="stanza">What about the eyes
+that no longer
+can hold the weight?</span><span class="stanza">What about the cuts
+that burn deeper and deeper
+no matter how well hidden?</span><span class="stanza">What about the whispers
+that echo in your head
+when the solitude overshadows?</span><span class="stanza">And yet we breathe
+not knowing the answer to
+the numbness,
+the burden,
+the flames,
+the screams.
+But why?</span></div>
+    </div>
+
+    <!-- 4 -->
+    <div class="poem">
+      <div class="poem-number">04</div>
+      <div class="poem-title">This is new, and not.</div>
+      <div class="poem-body"><span class="stanza">The light in my eyes
+hesitate, again
+but not the same light.</span><span class="stanza">The curls of my lips
+twist, again
+but not the same twists.</span><span class="stanza">The pulse in my chest
+falters, again
+but not the same beat.</span><span class="stanza">The rhythm of my walk
+stall, again
+but not the same falls.</span><span class="stanza">I'm aware and accepting
+but not.
+
+This is new
+and not.</span></div>
+    </div>
+
+    <!-- 5 -->
+    <div class="poem">
+      <div class="poem-number">05</div>
+      <div class="poem-title">Die, but Not to Die</div>
+      <div class="poem-body"><span class="stanza">How does it feel?
+when death is staring at you
+and all you want to do is
+Kiss it—</span><span class="stanza">Not to stop breathing,
+but to feel someone else's breath.
+
+Not to stop breathing
+but to let go of the weight.
+
+Not to stop breathing
+but to stop running.</span><span class="stanza">So,
+How does it feel?</span></div>
+    </div>
+
+    <!-- 6 -->
+    <div class="poem">
+      <div class="poem-number">06</div>
+      <div class="poem-title">I come and go like a Dream</div>
+      <div class="poem-body"><span class="stanza">Maybe I will
+I will fly to your city.
+To touch you,
+to feel you,
+to let you hold me—
+and not ask if this is right.</span><span class="stanza">If this is right or wrong,
+kissing you in places
+I shouldn't be.
+Laughing at jokes,
+or making them too—
+I've wanted this forever.
+You did too.</span><span class="stanza">But when I leave,
+without a trace,
+will it matter?
+Without a promise,
+will it really matter
+if it was right or wrong,
+if I come and go like a dream?
+Will it matter to you?</span></div>
+    </div>
+
+    <!-- 7 -->
+    <div class="poem">
+      <div class="poem-number">07</div>
+      <div class="poem-title">Reality and Duality of Illusions</div>
+      <div class="poem-body"><span class="stanza">the reality and duality
+in my illusions,
+I hold you in silence,
+yet lose you in noise.</span><span class="stanza">you return like a ghost,
+touching my memory but not my skin,
+a wound that refuses to close,
+a fire that pretends to die.</span><span class="stanza">I hate the way I wait,
+for the hope of love.
+And now,
+where your desire leans toward me,
+yet your chains are fastened elsewhere—
+I burn in the space between.</span></div>
+    </div>
+
+    <!-- 8 -->
+    <div class="poem">
+      <div class="poem-number">08</div>
+      <div class="poem-title">My heart's home</div>
+      <div class="poem-body"><span class="stanza">Are you a home to my heart.
+it finds you
+when I am lost.
+You are the reason
+it knows what forever means.</span><span class="stanza">It tells the journey is thorny
+with an unknowing ending
+But yet,
+I take paths that lead to you.</span><span class="stanza">And when I see you smile,
+it smiles back even more.
+You are not just someone I love,
+you are the reason love feels real to me.</span></div>
+    </div>
+
+
+
+    <!-- 10 -->
+    <div class="poem">
+      <div class="poem-number">09</div>
+      <div class="poem-title">The House That Remembers</div>
+      <div class="poem-body"><span class="stanza">He sits where my childhood learned safety,
+hands red with answers he never speaks.
+I wake too late—as always—
+love arriving after the damage.</span><span class="stanza">The blade glints like a sentence
+he refuses to finish.
+I carry five years on my back
+and still try to kneel.</span><span class="stanza">My arms remember before my mind does.
+I wipe blood like it's rain,
+like tenderness can rewrite history.</span><span class="stanza">Somewhere, an older version of me
+is watching from the doorway,
+wondering how many times
+a heart can confuse mercy for fate.</span></div>
+    </div>
+
+    <!-- 11 -->
+    <div class="poem">
+      <div class="poem-number">10</div>
+      <div class="poem-title">After the War</div>
+      <div class="poem-body"><span class="stanza">I did not love him
+when I was whole.
+I loved him
+while something inside me was burning its own house.</span><span class="stanza">He was not always shelter.
+Sometimes he was the smoke.
+Sometimes the fire learned my name
+and answered.</span><span class="stanza">But I kept him anyway—
+like a song you hum
+to drown out the sound of breaking.</span><span class="stanza">I fought myself with his shadow on my back,
+with the thought of him
+stitched into my ribs,
+holding me upright
+when I wanted to fold.</span><span class="stanza">He was armor once.
+He was a wound too.
+I did not ask which was truer—
+both kept me alive.</span><span class="stanza">I loved him without language for future,
+without contracts or clean edges.
+Half-promises still glow
+when you are trying not to disappear.
+When the war ended,
+I returned carrying victory
+to a place that no longer knew my name.</span><span class="stanza">Nothing was stolen.
+Nothing was owed.
+Still, my hands were empty
+in the shape of him.</span><span class="stanza">I don't reach for him now.
+I reach for the echo—
+the proof that I once loved
+while bleeding
+and did not die.
+
+That is the pain.
+That is the miracle.</span></div>
+    </div>
+
+    <!-- 12 — note -->
+    <div class="poem poem--note">
+      <div class="poem-number">11</div>
+      <div class="poem-title">a thought, not a poem</div>
+      <div class="poem-body">He saved me, not him but the thoughts of him.
+And that's why unloving him feels like losing myself, at least a part of myself.</div>
+    </div>
+
+    <!-- 13 — Urdu -->
+    <div class="poem poem--urdu">
+      <div class="poem-number">12</div>
+      <div class="poem-title">حُسن کے آنگن میں</div>
+      <div class="poem-body"><span class="stanza">حُسن کے آنگن میں تو ڈوب چکا ہے
+میرے روح کے دستک پر آ کے اُس نے مُنہ موڑ لیا،
+اب میں خود کو نا-قابل سمجھوں یا اُسے؟
+کون تیار تھا اور کون نہیں؟</span><span class="stanza">اب یہ درد پوچھتا ہے،
+تیری ہمت تھی کم، یا میری محبت زیادہ؟
+یا کسی اور کے آنگن کی خوشبو تمہیں گمراہ کر گئی
+پھر سے۔</span></div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-left">Built with 💻 &amp; ☕ — Afra · Chennai · © <span id="year"></span></span>
+      <div class="footer-links">
+        <a href="https://github.com/afraj-1" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/afra-juwairiya-403a3a2a0/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:afrajuwairiya@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.poem').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

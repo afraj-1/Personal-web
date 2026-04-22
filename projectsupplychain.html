@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Supply Chain Analytics Platform — Afra Juwairiya</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">Af<span>ra</span></a>
+      <nav class="nav-links">
+        <a href="index.html#work">Work</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact" class="nav-cta">Let's talk →</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="project-page">
+
+    <a href="index.html#work" class="back-link">← All projects</a>
+
+    <div class="project-eyebrow">Data Analytics · Machine Learning · Power BI</div>
+    <h1 class="project-title">Global Supply Chain &amp;<br><em>Vendor Analytics Platform</em></h1>
+
+    <div class="project-meta">
+      <div class="meta-item"><span class="meta-k">Type</span><span class="meta-v">Self-learning project</span></div>
+      <div class="meta-item"><span class="meta-k">Started</span><span class="meta-v">Feb 2026</span></div>
+      <div class="meta-item"><span class="meta-k">Status</span><span class="meta-v" style="color:#86efac;">Active</span></div>
+      <div class="meta-item"><span class="meta-k">Stack</span><span class="meta-v">Python · PostgreSQL · Power BI · Scikit-learn</span></div>
+    </div>
+
+    <!-- NUMBERS -->
+    <div class="numbers-grid">
+      <div class="number-card"><div class="number-big">5<span>k+</span></div><div class="number-label">Purchase orders tracked</div></div>
+      <div class="number-card"><div class="number-big">50</div><div class="number-label">Suppliers across 5 regions</div></div>
+      <div class="number-card"><div class="number-big">14<span>k+</span></div><div class="number-label">Total records analysed</div></div>
+      <div class="number-card"><div class="number-big">73<span>.5%</span></div><div class="number-label">Random Forest accuracy</div></div>
+      <div class="number-card"><div class="number-big">8</div><div class="number-label">KPIs engineered</div></div>
+      <div class="number-card"><div class="number-big">4</div><div class="number-label">Power BI dashboard pages</div></div>
+    </div>
+
+    <div class="project-body">
+      <div class="content-col">
+
+        <div class="block">
+          <div class="block-label">What it is</div>
+          <p>A full analytics platform I built while teaching myself data engineering — from raw data all the way to a live Power BI dashboard. The idea was to build something at real scale, not a toy dataset. So I designed it around 5,000+ purchase orders, 50 suppliers, and 4,800 shipments across five global regions.</p>
+          <p>It answers one question: <strong>which suppliers are actually reliable, and which are a risk?</strong> Every KPI, every model, every dashboard page points at that.</p>
+        </div>
+
+        <div class="block">
+          <div class="block-label">The numbers and what they mean</div>
+          <div class="stat-explain">
+            <div class="stat-row">
+              <div class="stat-num-sm">14,000+</div>
+              <div class="stat-desc">records processed through the Python/Pandas pipeline. Not a sample — the whole thing, cleaned and structured.</div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-num-sm">8 KPIs</div>
+              <div class="stat-desc">engineered from scratch — OTIF rate (On Time In Full), defect PPM, weighted supplier scores, sector weighting, and more. Each one is a calculated column, not a given field.</div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-num-sm">73.5%</div>
+              <div class="stat-desc">accuracy on the Random Forest risk classifier. 17 features, trained on historical shipment data to flag high-risk suppliers before problems happen. Not perfect — but better than guessing.</div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-num-sm">World Bank API</div>
+              <div class="stat-desc">integrated for real-time country-level LPI (Logistics Performance Index) and GDP data. Supplier risk scores factor in where the supplier is based, not just how they've performed.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="block-label">The stack</div>
+          <div class="stack-list">
+            <div class="stack-item"><span class="stack-name">PostgreSQL</span><span class="stack-role">5-table normalised schema — orders, suppliers, shipments, countries, risk scores</span></div>
+            <div class="stack-item"><span class="stack-name">Python / Pandas</span><span class="stack-role">Data cleaning, KPI calculation, pipeline automation</span></div>
+            <div class="stack-item"><span class="stack-name">Scikit-learn</span><span class="stack-role">Random Forest classifier for supplier risk prediction</span></div>
+            <div class="stack-item"><span class="stack-name">World Bank API</span><span class="stack-role">Live country risk data — LPI scores, GDP</span></div>
+            <div class="stack-item"><span class="stack-name">Power BI + DAX</span><span class="stack-role">4-page dashboard — heat maps, defect trends, KPI scorecards</span></div>
+            <div class="stack-item"><span class="stack-name">pgAdmin</span><span class="stack-role">Schema management and query testing</span></div>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="block-label">What I actually learned</div>
+          <p>Mostly that real data work is 80% cleaning and 20% the interesting stuff. I built this to understand the full stack of analytics — not just running a model but designing the schema that feeds it, engineering the features it trains on, and presenting the output in a way a non-technical person could actually use.</p>
+          <p>The Power BI layer was harder than I expected. DAX is its own language. Getting the heat maps to show regional risk intuitively took more iterations than anything else.</p>
+        </div>
+
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-label">Technologies</div>
+          <div class="tag-cloud">
+            <span>Python</span><span>Pandas</span><span>NumPy</span>
+            <span>Scikit-learn</span><span>PostgreSQL</span><span>pgAdmin</span>
+            <span>Power BI</span><span>DAX</span><span>World Bank API</span>
+            <span>REST APIs</span>
+          </div>
+        </div>
+
+        <a href="https://github.com/afraj-1" target="_blank" rel="noopener" class="sidebar-btn sidebar-btn--gh">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View on GitHub
+        </a>
+
+        <div class="source-code-card">
+          <div class="sc-label">Source code</div>
+          <div class="sc-title">Get the full codebase</div>
+          <div class="sc-body">Complete documented code — PostgreSQL schema, Python pipeline, ML model, Power BI file.</div>
+          <div class="sc-price">Pricing coming soon</div>
+          <button class="sc-btn" onclick="notifyMe(this)">Notify me when available</button>
+          <div class="sc-thanks" style="display:none;">Done! I'll reach out when it's live.</div>
+        </div>
+
+        <a href="mailto:afrajuwairiya@gmail.com" class="sidebar-btn sidebar-btn--contact">
+          Got questions? Email me →
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-left">Afra Juwairiya · © <span class="yr"></span></span>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="https://github.com/afraj-1" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:afrajuwairiya@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.yr').forEach(e => e.textContent = new Date().getFullYear());
+    function notifyMe(btn) {
+      btn.style.display = 'none';
+      btn.nextElementSibling.style.display = 'block';
+    }
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), {threshold:0.1});
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

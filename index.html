@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Afra Juwairiya</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+
+    .cursor-glow {
+      position: fixed; width: 320px; height: 320px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,58,237,0.10) 0%, transparent 70%);
+      pointer-events: none; z-index: 0; transform: translate(-50%,-50%);
+    }
+
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      border-bottom: 0.5px solid rgba(255,255,255,0.07);
+      background: rgba(10,10,10,0.88); backdrop-filter: blur(14px);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 1.25rem 2.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav-logo { font-size: 1.1rem; font-weight: 500; color: #fff; text-decoration: none; letter-spacing: -0.5px; }
+    .nav-logo span { color: #a78bfa; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta { background: #7c3aed !important; color: #fff !important; padding: 7px 18px; border-radius: 100px; text-transform: none !important; letter-spacing: 0 !important; font-size: 0.8rem !important; }
+
+    .hero { padding: 7rem 2.5rem 5rem; position: relative; z-index: 1; }
+    .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: end; }
+    .hero-eyebrow {
+      font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.2em;
+      color: #a78bfa; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;
+    }
+    .hero-eyebrow::before { content: ''; display: block; width: 24px; height: 0.5px; background: #a78bfa; }
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3.5rem, 8vw, 6.5rem); font-weight: 400;
+      line-height: 0.95; letter-spacing: -3px; color: #fff; margin-bottom: 1.75rem;
+    }
+    .hero-name em { font-style: italic; color: #a78bfa; display: block; }
+    .hero-tagline {
+      font-size: clamp(0.9rem, 1.5vw, 1.05rem); color: rgba(255,255,255,0.45);
+      line-height: 1.8; max-width: 480px; margin-bottom: 2.5rem;
+    }
+    .hero-tagline strong { color: rgba(255,255,255,0.75); font-weight: 400; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      background: #7c3aed; color: #fff; padding: 0.8rem 1.75rem; border-radius: 100px;
+      font-size: 0.85rem; font-weight: 500; text-decoration: none;
+      transition: background 0.2s, transform 0.15s; display: inline-block;
+    }
+    .btn-primary:hover { background: #6d28d9; transform: translateY(-1px); }
+    .btn-ghost {
+      border: 0.5px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.65);
+      padding: 0.8rem 1.75rem; border-radius: 100px; font-size: 0.85rem;
+      text-decoration: none; transition: border-color 0.2s, color 0.2s, transform 0.15s; display: inline-block;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.4); color: #fff; transform: translateY(-1px); }
+
+    /* ── HERO RIGHT: AJ + socials ── */
+    .hero-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1.5rem; padding-bottom: 0.5rem; }
+    .hero-aj {
+      font-family: 'DM Serif Display', serif; font-size: 5rem; font-weight: 400;
+      font-style: italic; color: rgba(167,139,250,0.15); letter-spacing: -3px;
+      line-height: 1; user-select: none; transition: color 0.3s;
+    }
+    .hero-aj:hover { color: rgba(167,139,250,0.35); }
+    .hero-socials-col { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+    .hero-social {
+      font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.22); text-decoration: none;
+      transition: color 0.2s; writing-mode: vertical-rl;
+    }
+    .hero-social:hover { color: #a78bfa; }
+
+    /* ── TICKER ── */
+    .ticker-wrap { overflow: hidden; border-top: 0.5px solid rgba(255,255,255,0.06); border-bottom: 0.5px solid rgba(255,255,255,0.06); padding: 0.9rem 0; }
+    .ticker-track { display: flex; width: max-content; animation: ticker 30s linear infinite; }
+    .ticker-track:hover { animation-play-state: paused; }
+    .ticker-item { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.18em; color: rgba(255,255,255,0.18); padding: 0 2rem; white-space: nowrap; }
+    .ticker-item b { color: #a78bfa; font-weight: 400; margin-right: 2rem; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── SECTION SHARED ── */
+    .teaser { position: relative; z-index: 1; }
+    .teaser-inner { max-width: 1100px; margin: 0 auto; padding: 5rem 2.5rem; }
+    .t-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(255,255,255,0.25); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px; }
+    .t-label::after { content: ''; flex: 1; height: 0.5px; background: rgba(255,255,255,0.06); }
+    .t-heading { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; color: #fff; letter-spacing: -1.5px; margin-bottom: 0.5rem; line-height: 1.1; }
+    .t-heading em { font-style: italic; color: #a78bfa; }
+    .t-sub { font-size: 0.9rem; color: rgba(255,255,255,0.4); line-height: 1.75; max-width: 500px; margin-bottom: 2.5rem; }
+    .t-link { font-size: 0.8rem; color: rgba(255,255,255,0.35); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s, gap 0.2s; }
+    .t-link:hover { color: #a78bfa; gap: 10px; }
+    .section-divider { border: none; border-top: 0.5px solid rgba(255,255,255,0.06); margin: 0; }
+
+    /* ── WHO I AM: full story button ── */
+    .full-story-btn {
+      display: inline-flex; align-items: center; gap: 1rem; padding: 1.25rem 2rem;
+      border: 0.5px solid rgba(255,255,255,0.12); border-radius: 100px;
+      text-decoration: none; transition: border-color 0.25s, background 0.25s;
+      margin-top: 0.5rem;
+    }
+    .full-story-btn:hover { border-color: #a78bfa; background: rgba(124,58,237,0.06); }
+    .full-story-btn:hover .fsb-arrow { transform: translateX(4px); color: #a78bfa; }
+    .fsb-text {
+      font-family: 'DM Serif Display', serif; font-size: 1.35rem;
+      font-weight: 400; font-style: italic; color: rgba(255,255,255,0.7); letter-spacing: -0.5px;
+    }
+    .fsb-arrow { font-size: 1.2rem; color: rgba(255,255,255,0.3); transition: transform 0.25s, color 0.25s; }
+
+    /* ── WORK ── */
+    .work-list { display: flex; flex-direction: column; border-top: 0.5px solid rgba(255,255,255,0.06); margin-bottom: 2.5rem; }
+    .work-row {
+      display: grid; grid-template-columns: 2fr 1fr auto; align-items: center; gap: 2rem;
+      padding: 1.25rem 0; border-bottom: 0.5px solid rgba(255,255,255,0.06);
+      text-decoration: none; transition: padding-left 0.25s;
+    }
+    .work-row:hover { padding-left: 0.75rem; }
+    .work-row:hover .work-arrow { color: #a78bfa; }
+    .work-name { font-size: 0.95rem; font-weight: 500; color: rgba(255,255,255,0.8); }
+    .work-type { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.25); }
+    .work-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .work-tag { font-size: 0.65rem; background: rgba(124,58,237,0.1); color: rgba(167,139,250,0.7); padding: 3px 9px; border-radius: 100px; }
+    .work-arrow { font-size: 0.9rem; color: rgba(255,255,255,0.2); transition: color 0.2s; }
+
+    /* ── CREATIVE FOUR ── */
+    .creative-four { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 2.5rem; }
+    .cr-card {
+      background: #0f0f0f; border: 0.5px solid rgba(255,255,255,0.07);
+      border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .cr-card:hover { border-color: rgba(167,139,250,0.3); transform: translateY(-3px); }
+    .cr-card--insta:hover { border-color: rgba(249,168,212,0.4); }
+    .cr-tag { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.18em; color: #a78bfa; }
+    .cr-tag--soon { color: rgba(255,255,255,0.2); }
+    .cr-title { font-family: 'DM Serif Display', serif; font-size: 1.1rem; font-weight: 400; color: #fff; line-height: 1.25; }
+    .cr-card--soon .cr-title { color: rgba(255,255,255,0.45); }
+    .cr-preview { font-size: 0.8rem; color: rgba(255,255,255,0.35); line-height: 1.65; flex: 1; }
+    .cr-action { font-size: 0.75rem; color: rgba(167,139,250,0.7); margin-top: 0.5rem; transition: color 0.2s; }
+    .cr-action--muted { color: rgba(255,255,255,0.2); }
+    .cr-card--insta .cr-action { color: rgba(249,168,212,0.6); }
+
+    /* ── EARN ── */
+    .earn-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 2.5rem; }
+    .earn-card {
+      border: 0.5px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 1.5rem;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .earn-card:hover { background: #0f0f0f; border-color: rgba(167,139,250,0.2); }
+    .earn-card-icon { font-size: 1.25rem; margin-bottom: 0.75rem; }
+    .earn-card-title { font-size: 0.9rem; font-weight: 500; color: rgba(255,255,255,0.75); margin-bottom: 0.4rem; }
+    .earn-card-body { font-size: 0.78rem; color: rgba(255,255,255,0.35); line-height: 1.65; }
+    .earn-card-status { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.75rem; }
+    .status-soon { color: rgba(167,139,250,0.5); }
+    .status-open { color: #86efac; }
+
+    /* ── CONTACT ── */
+    .contact-teaser { background: #7c3aed; border-radius: 20px; padding: 3.5rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
+    .contact-headline { font-family: 'DM Serif Display', serif; font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 400; color: #fff; letter-spacing: -1px; margin-bottom: 0.5rem; }
+    .contact-sub { font-size: 0.875rem; color: rgba(255,255,255,0.65); line-height: 1.6; max-width: 380px; }
+    .contact-actions { display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; }
+    .btn-white { background: #fff; color: #7c3aed; padding: 0.8rem 1.75rem; border-radius: 100px; font-size: 0.85rem; font-weight: 500; text-decoration: none; text-align: center; transition: background 0.2s; }
+    .btn-white:hover { background: #f3f0ff; }
+    .btn-ghost-light { border: 0.5px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.75); padding: 0.8rem 1.75rem; border-radius: 100px; font-size: 0.85rem; text-decoration: none; text-align: center; transition: border-color 0.2s, color 0.2s; }
+    .btn-ghost-light:hover { border-color: #fff; color: #fff; }
+
+    /* ── FOOTER ── */
+    .site-footer { border-top: 0.5px solid rgba(255,255,255,0.06); padding: 2rem 2.5rem; margin-top: 1px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .footer-left { font-size: 0.72rem; color: rgba(255,255,255,0.2); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: 0.72rem; color: rgba(255,255,255,0.2); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: #a78bfa; }
+
+    /* ── FADE UP ── */
+    .fade-up { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .hero { padding: 4rem 1.5rem 3rem; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .teaser-inner { padding: 3rem 1.5rem; }
+      .work-row { grid-template-columns: 1fr auto; }
+      .work-tags { display: none; }
+      .creative-four { grid-template-columns: 1fr; }
+      .earn-grid { grid-template-columns: 1fr 1fr; }
+      .contact-teaser { grid-template-columns: 1fr; }
+      .contact-actions { flex-direction: row; }
+      .footer-inner { flex-direction: column; gap: 1rem; }
+    }
+    @media (max-width: 520px) {
+      .earn-grid { grid-template-columns: 1fr; }
+      .nav-links a:not(.nav-cta) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor-glow" id="glow"></div>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">Af<span>ra</span></a>
+      <nav class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#creative">Creative</a>
+        <a href="#earn">Hire me</a>
+        <a href="about.html">About</a>
+        <a href="#contact" class="nav-cta">Let's talk →</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">Chennai · Graduating April 2026 · Open to everything</div>
+        <h1 class="hero-name">Afra<br><em>Juwairiya.</em></h1>
+        <p class="hero-tagline">
+          <strong>Analyst by training. Poet by accident. Creator by choice.</strong><br>
+          I build things with data, break things with words, and somehow make both look intentional. There's no one thing that defines me — that's kind of the whole point.
+        </p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#work">See my work</a>
+          <a class="btn-ghost" href="poems.html">Read my poems</a>
+          <a class="btn-ghost" href="Afra_Juwairiya_Resume.pdf" download>CV ↓</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-aj">AJ</div>
+        <div class="hero-socials-col">
+          <a class="hero-social" href="https://github.com/afraj-1" target="_blank" rel="noopener">GitHub</a>
+          <a class="hero-social" href="https://www.linkedin.com/in/afra-juwairiya-403a3a2a0/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="hero-social" href="https://www.instagram.com/eww_af/" target="_blank" rel="noopener">Instagram</a>
+          <a class="hero-social" href="mailto:afrajuwairiya@gmail.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span class="ticker-item"><b>✦</b>data analyst</span>
+      <span class="ticker-item"><b>✦</b>full stack dev</span>
+      <span class="ticker-item"><b>✦</b>poet</span>
+      <span class="ticker-item"><b>✦</b>emcee</span>
+      <span class="ticker-item"><b>✦</b>instagram creator</span>
+      <span class="ticker-item"><b>✦</b>public speaker</span>
+      <span class="ticker-item"><b>✦</b>chaotic creative</span>
+      <span class="ticker-item"><b>✦</b>ships things anyway</span>
+      <span class="ticker-item"><b>✦</b>great humour actually</span>
+      <span class="ticker-item"><b>✦</b>data analyst</span>
+      <span class="ticker-item"><b>✦</b>full stack dev</span>
+      <span class="ticker-item"><b>✦</b>poet</span>
+      <span class="ticker-item"><b>✦</b>emcee</span>
+      <span class="ticker-item"><b>✦</b>instagram creator</span>
+      <span class="ticker-item"><b>✦</b>public speaker</span>
+      <span class="ticker-item"><b>✦</b>chaotic creative</span>
+      <span class="ticker-item"><b>✦</b>ships things anyway</span>
+      <span class="ticker-item"><b>✦</b>great humour actually</span>
+    </div>
+  </div>
+
+  <!-- WHO I AM -->
+  <section class="teaser" id="about-strip">
+    <div class="teaser-inner">
+      <div class="t-label">who is she</div>
+      <h2 class="t-heading fade-up">Many things.<br><em>Not one.</em></h2>
+      <p class="t-sub fade-up">Late night coder. Ambitious but lowkey about it. Feels everything loudly, writes it down, ships it anyway. Based in Chennai, headed wherever the right thing is.</p>
+      <a class="full-story-btn fade-up" href="about.html">
+        <span class="fsb-text">Read the full story</span>
+        <span class="fsb-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- WORK -->
+  <section class="teaser" id="work">
+    <div class="teaser-inner">
+      <div class="t-label">selected work</div>
+      <h2 class="t-heading fade-up">Projects that<br><em>actually did something.</em></h2>
+      <p class="t-sub fade-up">Not tutorials. Not templates. Things built to solve real problems — some for clients, some to learn, some just because I wanted to see if I could.</p>
+      <div class="work-list">
+        <a class="work-row fade-up" href="projectsupplychain.html">
+          <div><div class="work-name">Global Supply Chain Analytics Platform</div><div class="work-type">Data Analytics · ML · Power BI</div></div>
+          <div class="work-tags"><span class="work-tag">Python</span><span class="work-tag">PostgreSQL</span><span class="work-tag">Scikit-learn</span></div>
+          <div class="work-arrow">→</div>
+        </a>
+        <a class="work-row fade-up" href="projectfantek.html">
+          <div><div class="work-name">Fantek Company Website</div><div class="work-type">Full Stack · Live product · Freelance</div></div>
+          <div class="work-tags"><span class="work-tag">HTML/CSS/JS</span><span class="work-tag">PostgreSQL</span></div>
+          <div class="work-arrow">→</div>
+        </a>
+        <a class="work-row fade-up" href="projectfintech.html">
+          <div><div class="work-name">FinTech Analytics Pipeline</div><div class="work-type">Full Stack · Data Analytics</div></div>
+          <div class="work-tags"><span class="work-tag">Python</span><span class="work-tag">YFinance</span><span class="work-tag">PHP</span></div>
+          <div class="work-arrow">→</div>
+        </a>
+        <a class="work-row fade-up" href="projectfrontend.html">
+          <div><div class="work-name">Geo-Location Café Finder</div><div class="work-type">Frontend · Google Maps API</div></div>
+          <div class="work-tags"><span class="work-tag">JavaScript</span><span class="work-tag">APIs</span></div>
+          <div class="work-arrow">→</div>
+        </a>
+      </div>
+      <a class="t-link" href="projects.html">All projects →</a>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- CREATIVE -->
+  <section class="teaser" id="creative">
+    <div class="teaser-inner">
+      <div class="t-label">creative corner</div>
+      <h2 class="t-heading fade-up">Things I made<br><em>that aren't code.</em></h2>
+      <p class="t-sub fade-up">Poems, stories, speeches, content. The side of me that can't be put in a resume — and probably shouldn't be.</p>
+      <div class="creative-four">
+        <a class="cr-card cr-card--poem" href="poems.html" style="text-decoration:none;">
+          <div class="cr-tag">Poems</div>
+          <div class="cr-title">After the War</div>
+          <div class="cr-preview">I did not love him when I was whole. I loved him while something inside me was burning its own house...</div>
+          <div class="cr-action">Read all 12 →</div>
+        </a>
+          <a class="cr-card cr-card--poem" href="blogs.html" style="text-decoration:none;">
+          <div class="cr-tag cr-tag--soon">Coming soon</div>
+          <div class="cr-title">Tech Blog</div>
+          <div class="cr-preview">Data, code, building things, and the occasional opinion about all three.</div>
+          <div class="cr-action cr-action--muted">Notify me →</div>
+        </a>
+        <a class="cr-card cr-card--poem" href="stories.html" style="text-decoration:none;">
+          <div class="cr-tag cr-tag--soon">Coming soon</div>
+          <div class="cr-title">Emcee Moments &amp; Real Life Stories</div>
+          <div class="cr-preview">Speeches, stages, events I've hosted — and the unfiltered stories that don't fit anywhere else.</div>
+          <div class="cr-action cr-action--muted">Notify me →</div>
+        </a>
+        <a class="cr-card cr-card--insta" href="https://www.instagram.com/eww_af/" target="_blank" rel="noopener" style="text-decoration:none;">
+          <div class="cr-tag">Instagram</div>
+          <div class="cr-title">@eww_af</div>
+          <div class="cr-preview">Lifestyle, work, humour, and whatever I'm currently fixated on. I am the niche.</div>
+          <div class="cr-action">Visit profile →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- EARN -->
+  <section class="teaser" id="earn">
+    <div class="teaser-inner">
+      <div class="t-label">work with me</div>
+      <h2 class="t-heading fade-up">If you need<br><em>something done.</em></h2>
+      <p class="t-sub fade-up">Six ways to work together — pick what fits.</p>
+      <div class="earn-grid">
+        <div class="earn-card fade-up">
+          <div class="earn-card-icon">📊</div>
+          <div class="earn-card-title">Freelance analytics &amp; dev</div>
+          <div class="earn-card-body">Dashboards, data pipelines, full stack builds. If you have data that needs to make sense — or a product that needs to exist — let's talk.</div>
+          <div class="earn-card-status status-open">Open for work</div>
+        </div>
+        <div class="earn-card fade-up">
+          <div class="earn-card-icon">🎤</div>
+          <div class="earn-card-title">Book me as Emcee</div>
+          <div class="earn-card-body">Events, college fests, corporate functions. I own a stage. If you need someone who can hold a room and actually make it fun — I'm your person.</div>
+          <div class="earn-card-status status-open">Available to book</div>
+        </div>
+        <div class="earn-card fade-up">
+          <div class="earn-card-icon">📸</div>
+          <div class="earn-card-title">Brand collabs</div>
+          <div class="earn-card-body">Instagram partnerships with brands that fit — tech, lifestyle, aesthetics, things I'd actually use. No random promotions.</div>
+          <div class="earn-card-status status-open">DMs open</div>
+        </div>
+        <div class="earn-card fade-up">
+          <div class="earn-card-icon">💾</div>
+          <div class="earn-card-title">Source code</div>
+          <div class="earn-card-body">Documented, working project code — the supply chain platform, FinTech pipeline, and more. Buy the codebase, skip the tutorial.</div>
+          <div class="earn-card-status status-soon">Coming soon</div>
+        </div>
+        <div class="earn-card fade-up">
+          <div class="earn-card-icon">✍️</div>
+          <div class="earn-card-title">Tech writing</div>
+          <div class="earn-card-body">Technical blogs, documentation, or content that needs to actually make sense to a human. I write code and sentences equally well.</div>
+          <div class="earn-card-status status-soon">Coming soon</div>
+        </div>
+        <div class="earn-card fade-up">
+          <div class="earn-card-icon">🗣️</div>
+          <div class="earn-card-title">Speaking &amp; panels</div>
+          <div class="earn-card-body">Tech events, student panels, workshops. Data analytics, the creator-developer space, or honestly whatever the topic is — I'll prep and show up.</div>
+          <div class="earn-card-status status-open">Open to invites</div>
+        </div>
+      </div>
+      <a class="t-link" href="#contact">Get in touch →</a>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- CONTACT -->
+  <section class="teaser" id="contact">
+    <div class="teaser-inner">
+      <div class="contact-teaser fade-up">
+        <div>
+          <div class="contact-headline">Let's make<br>something real.</div>
+          <p class="contact-sub">Job opportunities, collabs, bookings, conversations — all welcome. If it's interesting, I'll reply.</p>
+        </div>
+        <div class="contact-actions">
+          <button class="btn-white" onclick="navigator.clipboard.writeText('afrajuwairiya@gmail.com').then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='afrajuwairiya@gmail.com',2000)})" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;">afrajuwairiya@gmail.com</button>
+          <a class="btn-ghost-light" href="https://www.linkedin.com/in/afra-juwairiya-403a3a2a0/" target="_blank" rel="noopener">LinkedIn →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-left">Afra Juwairiya · Chennai · © <span id="year"></span></span>
+      <div class="footer-links">
+        <a href="https://github.com/afraj-1" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/afra-juwairiya-403a3a2a0/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/eww_af/" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:afrajuwairiya@gmail.com">Email</a>
+        <a href="poems.html">Poems</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const glow = document.getElementById('glow');
+    document.addEventListener('mousemove', e => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80);
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>

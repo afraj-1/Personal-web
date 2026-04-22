@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Frontend Projects — Afra Juwairiya</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">Af<span>ra</span></a>
+      <nav class="nav-links">
+        <a href="index.html#work">Work</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact" class="nav-cta">Let's talk →</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="project-page">
+
+    <a href="index.html#work" class="back-link">← All projects</a>
+
+    <div class="project-eyebrow">Frontend · APIs · Vanilla JS</div>
+    <h1 class="project-title">Frontend<br><em>Builds</em></h1>
+
+    <div class="project-meta">
+      <div class="meta-item"><span class="meta-k">Projects</span><span class="meta-v">Geo-Location Café Finder · This Portfolio</span></div>
+      <div class="meta-item"><span class="meta-k">Stack</span><span class="meta-v">HTML · CSS · JavaScript · Google Maps API</span></div>
+      <div class="meta-item"><span class="meta-k">Repo</span><span class="meta-v"><a href="https://github.com/afraj-1" target="_blank" rel="noopener" style="color:#a78bfa;">GitHub ↗</a></span></div>
+      <div class="meta-item"><span class="meta-k">Type</span><span class="meta-v">Academic · Personal</span></div>
+    </div>
+
+    <div class="numbers-grid">
+      <div class="number-card"><div class="number-big">2</div><div class="number-label">Projects, 0 frameworks</div></div>
+      <div class="number-card"><div class="number-big">3</div><div class="number-label">Google APIs integrated</div></div>
+      <div class="number-card"><div class="number-big">Async</div><div class="number-label">JS handling API cycles</div></div>
+      <div class="number-card"><div class="number-big">Real</div><div class="number-label">Location data, live</div></div>
+    </div>
+
+    <div class="project-body">
+      <div class="content-col">
+
+        <div class="block">
+          <div class="block-label">Project 1 — Geo-Location Café Finder</div>
+          <p>A location-based café search tool built with vanilla JavaScript and the Google Maps API. You open it, it asks for your location, centres a map on you, and lets you search for cafés nearby in real time.</p>
+          <p>The technical challenge was handling the full async API cycle — permission request → geolocation → Maps JS API → Places API search → dynamic results rendering — without any framework doing the heavy lifting. <strong>Everything is manual.</strong></p>
+          <div class="stat-explain" style="margin-top:1.25rem;">
+            <div class="stat-row">
+              <div class="stat-num-sm">Google Maps JS</div>
+              <div class="stat-desc">interactive map that centres on your real location and updates as you search.</div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-num-sm">Places API</div>
+              <div class="stat-desc">real-time nearby café data — name, rating, distance, open/closed status.</div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-num-sm">Geolocation API</div>
+              <div class="stat-desc">handles browser permissions, fallback states, and dynamic map centering.</div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-num-sm">Async JS</div>
+              <div class="stat-desc">manages the full API call cycle without blocking the UI — results render as they arrive.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="block-label">Project 2 — This portfolio</div>
+          <p>The site you're on right now. Designed and built from scratch — dark, bold, no templates, no frameworks. Every layout decision, interaction, and line of CSS is hand-written.</p>
+          <p>It's gone through multiple redesigns. The current version is the one that actually feels like me — which took longer than any technical decision.</p>
+        </div>
+
+        <div class="block">
+          <div class="block-label">What building without frameworks actually teaches you</div>
+          <p>When React or Vue breaks, you Google it. When vanilla JS breaks, you have to understand what the browser is actually doing. These projects taught me <strong>how the web works</strong> — the event loop, async/await, DOM manipulation, API response handling — not just how to use a library that abstracts it.</p>
+          <p>That foundation is why picking up any framework later feels straightforward. You already know what it's doing underneath.</p>
+        </div>
+
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-label">Technologies</div>
+          <div class="tag-cloud">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+            <span>Google Maps JS API</span><span>Places API</span>
+            <span>Geolocation API</span><span>Async/Await</span>
+          </div>
+        </div>
+
+        <a href="https://github.com/afraj-1/Cafe-Finder" target="_blank" rel="noopener" class="sidebar-btn sidebar-btn--gh">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          Café Finder on GitHub
+        </a>
+
+        <a href="https://github.com/afraj-1/Digital-portfolio" target="_blank" rel="noopener" class="sidebar-btn sidebar-btn--gh">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          Portfolio on GitHub
+        </a>
+
+        <div class="source-code-card">
+          <div class="sc-label">Source code</div>
+          <div class="sc-title">Get the full codebase</div>
+          <div class="sc-body">Café Finder with full Google Maps API setup, geolocation handling, and async search flow. Documented and ready to run.</div>
+          <div class="sc-price">Pricing coming soon</div>
+          <button class="sc-btn" onclick="notifyMe(this)">Notify me when available</button>
+          <div class="sc-thanks" style="display:none;">Done! I'll reach out when it's live.</div>
+        </div>
+
+        <a href="mailto:afrajuwairiya@gmail.com" class="sidebar-btn sidebar-btn--contact">Got questions? Email me →</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-left">Afra Juwairiya · © <span class="yr"></span></span>
+      <div class="footer-links"><a href="index.html">Home</a><a href="https://github.com/afraj-1" target="_blank" rel="noopener">GitHub</a><a href="mailto:afrajuwairiya@gmail.com">Email</a></div>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll('.yr').forEach(e => e.textContent = new Date().getFullYear());
+    function notifyMe(btn) { btn.style.display='none'; btn.nextElementSibling.style.display='block'; }
+  </script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Afra Juwairiya</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+
+    /* ── NAV (same as index) ── */
+    .site-header { position: sticky; top: 0; z-index: 100; border-bottom: 0.5px solid rgba(255,255,255,0.07); background: rgba(10,10,10,0.88); backdrop-filter: blur(14px); }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 1.25rem 2.5rem; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-size: 1.1rem; font-weight: 500; color: #fff; text-decoration: none; letter-spacing: -0.5px; }
+    .nav-logo span { color: #a78bfa; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta { background: #7c3aed !important; color: #fff !important; padding: 7px 18px; border-radius: 100px; text-transform: none !important; letter-spacing: 0 !important; font-size: 0.8rem !important; }
+
+    /* ── PAGE ── */
+    .page { max-width: 720px; margin: 0 auto; padding: 5rem 2.5rem 6rem; }
+
+    .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.25); text-decoration: none; margin-bottom: 3.5rem; transition: color 0.2s; }
+    .back-link:hover { color: #a78bfa; }
+
+    /* ── HERO TEXT ── */
+    .about-eyebrow { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.2em; color: #a78bfa; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
+    .about-eyebrow::before { content: ''; display: block; width: 24px; height: 0.5px; background: #a78bfa; }
+    .about-name { font-family: 'DM Serif Display', serif; font-size: clamp(3rem, 7vw, 5rem); font-weight: 400; line-height: 0.95; letter-spacing: -2.5px; color: #fff; margin-bottom: 2rem; }
+    .about-name em { font-style: italic; color: #a78bfa; display: block; }
+    .about-opener { font-size: 1.1rem; color: rgba(255,255,255,0.6); line-height: 1.85; margin-bottom: 3.5rem; font-weight: 300; }
+    .about-opener strong { color: rgba(255,255,255,0.85); font-weight: 400; }
+
+    /* ── QUICK FACTS STRIP ── */
+    .facts-strip { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 4rem; padding-bottom: 3.5rem; border-bottom: 0.5px solid rgba(255,255,255,0.07); }
+    .fact-pill { font-size: 0.72rem; padding: 6px 14px; border-radius: 100px; border: 0.5px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); }
+
+    /* ── STORY SECTIONS ── */
+    .story-block { margin-bottom: 3.5rem; padding-bottom: 3.5rem; border-bottom: 0.5px solid rgba(255,255,255,0.06); }
+    .story-block:last-of-type { border-bottom: none; }
+    .story-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(255,255,255,0.2); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 8px; }
+    .story-label::after { content: ''; flex: 1; height: 0.5px; background: rgba(255,255,255,0.06); }
+    .story-heading { font-family: 'DM Serif Display', serif; font-size: 1.6rem; font-weight: 400; color: #fff; letter-spacing: -0.75px; margin-bottom: 1.25rem; line-height: 1.2; }
+    .story-heading em { font-style: italic; color: #a78bfa; }
+    .story-body { font-size: 0.95rem; color: rgba(255,255,255,0.5); line-height: 1.9; }
+    .story-body p { margin-bottom: 1.1rem; }
+    .story-body p:last-child { margin-bottom: 0; }
+    .story-body strong { color: rgba(255,255,255,0.8); font-weight: 400; }
+    .story-body em { font-style: italic; color: rgba(255,255,255,0.35); }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote { border-left: 2px solid #7c3aed; padding-left: 1.25rem; margin: 2rem 0; }
+    .pull-quote p { font-family: 'DM Serif Display', serif; font-size: 1.15rem; font-style: italic; color: rgba(255,255,255,0.6); line-height: 1.6; margin: 0; }
+
+    /* ── CITIES TIMELINE ── */
+    .cities { display: flex; flex-direction: column; gap: 0; margin: 1.5rem 0; }
+    .city-row { display: grid; grid-template-columns: 80px 1fr; gap: 1.25rem; padding: 1rem 0; border-bottom: 0.5px solid rgba(255,255,255,0.05); position: relative; }
+    .city-row:last-child { border-bottom: none; }
+    .city-year { font-size: 0.72rem; color: #a78bfa; padding-top: 2px; }
+    .city-name { font-size: 0.92rem; font-weight: 500; color: rgba(255,255,255,0.75); margin-bottom: 3px; }
+    .city-note { font-size: 0.8rem; color: rgba(255,255,255,0.35); line-height: 1.5; }
+
+    /* ── THINGS I AM ── */
+    .things-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 1.5rem 0; }
+    .thing { background: #0f0f0f; border: 0.5px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 1rem 1.25rem; }
+    .thing-title { font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.75); margin-bottom: 4px; }
+    .thing-body { font-size: 0.78rem; color: rgba(255,255,255,0.35); line-height: 1.6; }
+
+    /* ── FOOTER CTA ── */
+    .about-cta { background: #7c3aed; border-radius: 20px; padding: 3rem; text-align: center; margin-top: 4rem; }
+    .cta-head { font-family: 'DM Serif Display', serif; font-size: 2rem; font-weight: 400; color: #fff; letter-spacing: -1px; margin-bottom: 0.5rem; }
+    .cta-sub { font-size: 0.875rem; color: rgba(255,255,255,0.65); margin-bottom: 1.75rem; }
+    .cta-btns { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .btn-white { background: #fff; color: #7c3aed; padding: 0.8rem 1.75rem; border-radius: 100px; font-size: 0.85rem; font-weight: 500; text-decoration: none; }
+    .btn-ghost-light { border: 0.5px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.75); padding: 0.8rem 1.75rem; border-radius: 100px; font-size: 0.85rem; text-decoration: none; }
+
+    /* ── SITE FOOTER ── */
+    .site-footer { border-top: 0.5px solid rgba(255,255,255,0.06); padding: 2rem 2.5rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .footer-left { font-size: 0.72rem; color: rgba(255,255,255,0.2); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: 0.72rem; color: rgba(255,255,255,0.2); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: #a78bfa; }
+
+    /* ── FADE ── */
+    .fade-up { opacity: 0; transform: translateY(16px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 640px) {
+      .page { padding: 3rem 1.5rem 4rem; }
+      .things-grid { grid-template-columns: 1fr; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .footer-inner { flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">Af<span>ra</span></a>
+      <nav class="nav-links">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#creative">Creative</a>
+        <a href="index.html#earn">Hire me</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="index.html#contact" class="nav-cta">Let's talk →</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page">
+
+    <a href="index.html" class="back-link">← Back home</a>
+
+    <div class="about-eyebrow">The full story</div>
+    <h1 class="about-name">Hi, I'm<br><em>Afra.</em></h1>
+
+    <p class="about-opener">
+      <strong>Data analyst, full stack developer, Emcee, poet, Instagram creator, sports captain, NSS Vice President, department secretary, aspiring businesswoman, political person, proud Delhiite stuck in Chennai.</strong> That's the short version. Here's the rest.
+    </p>
+
+    <div class="facts-strip">
+      <span class="fact-pill">Chennai (unfortunately)</span>
+      <span class="fact-pill">Delhi at heart</span>
+      <span class="fact-pill">BCA · April 2026</span>
+      <span class="fact-pill">Python first</span>
+      <span class="fact-pill">Emcee</span>
+      <span class="fact-pill">Sports captain</span>
+      <span class="fact-pill">NSS Vice President</span>
+      <span class="fact-pill">Politically active</span>
+      <span class="fact-pill">Business is the dream</span>
+      <span class="fact-pill">Insha Allah</span>
+    </div>
+
+    <!-- CITIES -->
+    <div class="story-block fade-up">
+      <div class="story-label">where I've been</div>
+      <h2 class="story-heading">Delhi shaped me.<br><em>Chennai kept me.</em></h2>
+      <div class="story-body">
+        <p>I was two when my family moved to Delhi for my dad's work. I grew up there. Delhi is my city — the one that fits, the one I think about, the one I'd go back to without hesitating. I love it in a way that's hard to explain if you haven't lived there.</p>
+      </div>
+      <div class="cities">
+        <div class="city-row">
+          <div class="city-year">Age 2–10</div>
+          <div><div class="city-name">Delhi</div><div class="city-note">Grew up here. This is home.</div></div>
+        </div>
+        <div class="city-row">
+          <div class="city-year">6th–7th grade</div>
+          <div><div class="city-name">Chennai · Velammal</div><div class="city-note">Unfortunate situation moved us. Hated it. Velammal is basically a jail — anyone who went there knows.</div></div>
+        </div>
+        <div class="city-row">
+          <div class="city-year">8th–10th grade</div>
+          <div><div class="city-name">Delhi (again)</div><div class="city-note">Convinced my dad to let me come back. It worked.</div></div>
+        </div>
+        <div class="city-row">
+          <div class="city-year">Corona, 2020</div>
+          <div><div class="city-name">Chennai (again)</div><div class="city-note">Me, my mom, and my sister had to shift back. My sister's last year of school. Didn't get a choice this time.</div></div>
+        </div>
+        <div class="city-row">
+          <div class="city-year">11th–now</div>
+          <div><div class="city-name">Chennai · Velammal again → BCA</div><div class="city-note">Back to the jail school for 11th and 12th. Then BCA. Still here. Still looking for the exit.</div></div>
+        </div>
+      </div>
+      <div class="pull-quote">
+        <p>"I didn't choose Chennai. Chennai chose me, twice, against my will. But it's where everything started — the coding, the writing, the figuring out who I actually am."</p>
+      </div>
+    </div>
+
+    <!-- CODING -->
+    <div class="story-block fade-up">
+      <div class="story-label">how the coding started</div>
+      <h2 class="story-heading">Python in a boring class<br><em>is still Python.</em></h2>
+      <div class="story-body">
+        <p>It started at Velammal during 11th grade. Every class was boring — computer was the only one that was <em>bearable</em>. Me and my friend would sit there talking the whole time and still somehow get the highest marks. That's when I knew something was happening.</p>
+        <p>Python clicked in a way other languages didn't. Not Java, not C — <strong>Python</strong>. It made sense to me. It still does. That one bearable class in a school I hated became the thing I'm building a career on.</p>
+        <p>BCA happened because my mom wanted it to happen. And honestly it's been fine — data analytics, full stack, machine learning. I've built real things. But the long-term dream, the one I've had since 8th grade, is <strong>business</strong>. That's where I'm actually going, insha Allah. The tech is the foundation.</p>
+      </div>
+    </div>
+
+    <!-- EMCEE -->
+    <div class="story-block fade-up">
+      <div class="story-label">the stage thing</div>
+      <h2 class="story-heading">Give me a mic and<br><em>I'll own the room.</em></h2>
+      <div class="story-body">
+        <p>I've wanted to be in front of a microphone since I was a kid. Not performing — <strong>speaking</strong>. The kind of speaking where you hold a room, where people actually listen, where something shifts. I grew up watching student council members in schools abroad, parliamentary debates, political speeches — and I wanted that. All of it.</p>
+        <p>In college I've been <strong>Event Coordinator</strong>, <strong>NSS Vice President</strong>, and <strong>Department Secretary</strong>. Every role that had a stage, I took. Emcee at events is the closest I've found to what I actually want — the energy of holding a crowd, being the thread that ties an event together, making it fun without losing the weight of it.</p>
+      </div>
+      <div class="pull-quote">
+        <p>"What I would do to get in front of a mic. Since I was a kid."</p>
+      </div>
+      <div class="story-body">
+        <p>The dream was journalism or law. I'm political — genuinely, not just online. Up to date, opinionated, not quiet about it. I wanted to argue in courtrooms or break stories. That didn't happen the way I planned. But the voice is still there. It always finds a way out — through speeches, through poems, through this.</p>
+      </div>
+    </div>
+
+    <!-- WHO I AM -->
+    <div class="story-block fade-up">
+      <div class="story-label">the rest of it</div>
+      <h2 class="story-heading">Everything else<br><em>that makes me me.</em></h2>
+      <div class="things-grid">
+        <div class="thing">
+          <div class="thing-title">Politically active</div>
+          <div class="thing-body">Not passively. Up to date, opinionated, not afraid to say where I stand. One of the things I care about most.</div>
+        </div>
+        <div class="thing">
+          <div class="thing-title">A bit religious</div>
+          <div class="thing-body">Insha Allah is not filler. Faith is part of how I move through the world — quietly but really.</div>
+        </div>
+        <div class="thing">
+          <div class="thing-title">Instagram is just me</div>
+          <div class="thing-body">No fixed niche. My lifestyle, my work, my humour, my thoughts. I am the niche. Might go more informative soon.</div>
+        </div>
+        <div class="thing">
+          <div class="thing-title">Full of life</div>
+          <div class="thing-body">Chaotic, ambitious, loud when I need to be, funny actually. I take up space and I've stopped apologising for it.</div>
+        </div>
+        <div class="thing">
+          <div class="thing-title">Poet at 2am</div>
+          <div class="thing-body">12 poems in my notes app, now on this website. They're all real. I don't write any other way.</div>
+        </div>
+        <div class="thing">
+          <div class="thing-title">Business is the goal</div>
+          <div class="thing-body">Since 8th grade. The coding, the analytics, the freelancing — it's all building toward something bigger. Insha Allah.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="about-cta fade-up">
+      <div class="cta-head">Want to work together?</div>
+      <p class="cta-sub">Jobs, collabs, bookings, conversations — all welcome.</p>
+      <div class="cta-btns">
+        <button class="btn-white" onclick="navigator.clipboard.writeText('afrajuwairiya@gmail.com').then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='afrajuwairiya@gmail.com',2000)})" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;">afrajuwairiya@gmail.com</button>
+        <a class="btn-ghost-light" href="https://www.linkedin.com/in/afra-juwairiya-403a3a2a0/" target="_blank" rel="noopener">LinkedIn →</a>
+        <a class="btn-ghost-light" href="Afra_Juwairiya_Resume.pdf" download>Download CV</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-left">Afra Juwairiya · Chennai · © <span id="year"></span></span>
+      <div class="footer-links">
+        <a href="https://github.com/afraj-1" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/afra-juwairiya-403a3a2a0/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:afrajuwairiya@gmail.com">Email</a>
+        <a href="poems.html">Poems</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>

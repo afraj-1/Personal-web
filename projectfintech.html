@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FinTech Analytics Pipeline — Afra Juwairiya</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">Af<span>ra</span></a>
+      <nav class="nav-links">
+        <a href="index.html#work">Work</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact" class="nav-cta">Let's talk →</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="project-page">
+
+    <a href="index.html#work" class="back-link">← All projects</a>
+
+    <div class="project-eyebrow">Full Stack · Data Analytics · Live API</div>
+    <h1 class="project-title">FinTech<br><em>Analytics Pipeline</em></h1>
+
+    <div class="project-meta">
+      <div class="meta-item"><span class="meta-k">Type</span><span class="meta-v">Academic project</span></div>
+      <div class="meta-item"><span class="meta-k">Stack</span><span class="meta-v">Python · SQLite · PHP · Yahoo Finance API</span></div>
+      <div class="meta-item"><span class="meta-k">Repo</span><span class="meta-v"><a href="https://github.com/afraj-1/FinTech_Analytics_Pipeline" target="_blank" rel="noopener" style="color:#a78bfa;">GitHub ↗</a></span></div>
+      <div class="meta-item"><span class="meta-k">Status</span><span class="meta-v" style="color:#86efac;">Complete</span></div>
+    </div>
+
+    <div class="numbers-grid">
+      <div class="number-card"><div class="number-big">15<span>+</span></div><div class="number-label">Live assets tracked</div></div>
+      <div class="number-card"><div class="number-big">3</div><div class="number-label">Layer architecture</div></div>
+      <div class="number-card"><div class="number-big">Real‑time</div><div class="number-label">Yahoo Finance data</div></div>
+      <div class="number-card"><div class="number-big">ROI</div><div class="number-label">Auto-calculated per asset</div></div>
+    </div>
+
+    <div class="project-body">
+      <div class="content-col">
+
+        <div class="block">
+          <div class="block-label">What it is</div>
+          <p>A full-stack investment tracker where three separate layers — a PHP frontend, a SQLite database, and a Python analytics backend — talk to each other through the Yahoo Finance API. You enter a stock ticker, the system fetches live market data, calculates your ROI, and shows it on a dashboard.</p>
+          <p>The point wasn't the finance — it was <strong>building a real data pipeline end to end</strong>. Input → storage → processing → live output. That whole loop in one project.</p>
+        </div>
+
+        <div class="block">
+          <div class="block-label">The numbers and what they mean</div>
+          <div class="stat-explain">
+            <div class="stat-row">
+              <div class="stat-num-sm">15+ assets</div>
+              <div class="stat-desc">tracked simultaneously with live prices pulled from Yahoo Finance API — stocks, crypto, whatever you add.</div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-num-sm">3-layer architecture</div>
+              <div class="stat-desc">PHP handles the user interface and CRUD operations. SQLite stores everything with relational integrity. Python hits the API, runs the Pandas calculations, and writes results back. Each layer does one job.</div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-num-sm">Automated ROI</div>
+              <div class="stat-desc">unrealised gains/losses and sector allocation calculated automatically every time the Python script runs — no manual spreadsheet work.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="block-label">The stack</div>
+          <div class="stack-list">
+            <div class="stack-item"><span class="stack-name">Python / Pandas</span><span class="stack-role">Analytics brain — fetches live data, calculates ROI, updates the database</span></div>
+            <div class="stack-item"><span class="stack-name">Yahoo Finance API</span><span class="stack-role">Real-time stock and crypto prices</span></div>
+            <div class="stack-item"><span class="stack-name">SQLite3</span><span class="stack-role">Normalised relational schema with foreign key integrity</span></div>
+            <div class="stack-item"><span class="stack-name">PHP 8 + CSS</span><span class="stack-role">Dashboard UI — glassmorphism design, CRUD interface for trades</span></div>
+            <div class="stack-item"><span class="stack-name">XAMPP / Apache</span><span class="stack-role">Local server environment</span></div>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="block-label">What I actually learned</div>
+          <p>That making three different languages and technologies talk to each other cleanly is harder than it looks. PHP and Python don't naturally know about each other — the database is the shared language between them. Getting that architecture right, where each layer has clear responsibility and doesn't bleed into another, was the main thing.</p>
+          <p>Also: Yahoo Finance API is free until it isn't. Rate limits are real.</p>
+        </div>
+
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-label">Technologies</div>
+          <div class="tag-cloud">
+            <span>Python 3</span><span>Pandas</span><span>NumPy</span>
+            <span>YFinance</span><span>SQLite3</span><span>PHP 8</span>
+            <span>CSS3</span><span>XAMPP</span>
+          </div>
+        </div>
+
+        <a href="https://github.com/afraj-1/FinTech_Analytics_Pipeline" target="_blank" rel="noopener" class="sidebar-btn sidebar-btn--gh">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          View on GitHub
+        </a>
+
+        <div class="source-code-card">
+          <div class="sc-label">Source code</div>
+          <div class="sc-title">Get the full codebase</div>
+          <div class="sc-body">Complete code — Python pipeline, SQLite schema, PHP dashboard, setup instructions.</div>
+          <div class="sc-price">Pricing coming soon</div>
+          <button class="sc-btn" onclick="notifyMe(this)">Notify me when available</button>
+          <div class="sc-thanks" style="display:none;">Done! I'll reach out when it's live.</div>
+        </div>
+
+        <a href="mailto:afrajuwairiya@gmail.com" class="sidebar-btn sidebar-btn--contact">Got questions? Email me →</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-left">Afra Juwairiya · © <span class="yr"></span></span>
+      <div class="footer-links"><a href="index.html">Home</a><a href="https://github.com/afraj-1" target="_blank" rel="noopener">GitHub</a><a href="mailto:afrajuwairiya@gmail.com">Email</a></div>
+    </div>
+  </footer>
+  <script>
+    document.querySelectorAll('.yr').forEach(e => e.textContent = new Date().getFullYear());
+    function notifyMe(btn) { btn.style.display='none'; btn.nextElementSibling.style.display='block'; }
+  </script>
+</body>
+</html>
